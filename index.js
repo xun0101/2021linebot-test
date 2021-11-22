@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import linebot from 'linebot'
-import axios from 'axios'
+import folk from './folk.js'
+import './data2.js'
+import './data.js'
 
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
@@ -9,19 +11,11 @@ const bot = linebot({
 })
 
 bot.on('message', async (event) => {
+  console.log(event.message.text)
   if (event.message.type === 'text') {
-    try {
-      const { data } = await axios.get('https://data.boch.gov.tw/data/opendata/v2/assetsCase/5.1.json')
-      for (let i = 0; i < data.caseName.length; i++) {
-        if (data.caseName === 'text') {
-          event.reply(`名俗由來:\n${data.assetsClassifyName}`)
-          return
-        }
-      }
-    } catch (error) {
-      console.log(error)
-      event.reply('錯誤')
-    }
+    folk(event)
+  } else {
+    console.log('error')
   }
 })
 
