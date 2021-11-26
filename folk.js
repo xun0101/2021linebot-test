@@ -1,13 +1,18 @@
 import { data } from './data.js'
 import { data as data2 } from './data2.js'
+import flex from './flex.js'
 
 export default async (event) => {
   try {
     if (event.message.type === 'text') {
       const replies = []
+      let a = 0
       for (let i = 0; i < data.length; i++) {
+        flex.contents.header.contents.text = data[i].caseName
+        flex.contents.hero.url = data[i].representImage
         if (data[i].caseName === event.message.text) {
-          replies.push(`活動介紹:\n${data[i].registerReason}\n活動特點:\n${data[i].ceremonyFeature}`)
+          a = 1
+          // replies.push(`活動介紹:\n${data[i].registerReason}\n活動特點:\n${data[i].ceremonyFeature}`)
         } else if ((`${data[i].caseName}歷史`) === event.message.text) {
           replies.push(`名俗由來:\n${data[i].historyDevelopment}`)
         } else if ((`${data[i].caseName}特點`) === event.message.text) {
@@ -32,6 +37,8 @@ export default async (event) => {
       if (replies.length > 0) {
         event.reply(replies.slice(0, 5))
         console.log(replies)
+      } else if (a === 1) {
+        event.reply(flex)
       } else {
         event.reply('無此資料')
       }
