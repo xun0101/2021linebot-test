@@ -29,9 +29,9 @@ export default {
         {
           type: 'button',
           action: {
-            type: 'postback',
+            type: 'message',
             label: '活動介紹',
-            data: 'hi'
+            text: 'hi'
           },
           style: 'primary',
           color: '#B9B973',
@@ -40,9 +40,9 @@ export default {
         {
           type: 'button',
           action: {
-            type: 'postback',
+            type: 'message',
             label: '活動特點',
-            data: 'hello'
+            text: 'hi'
           },
           style: 'primary',
           color: '#B9B973',

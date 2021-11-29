@@ -10,6 +10,8 @@ export default async (event) => {
       for (let i = 0; i < data.length; i++) {
         flex.contents.header.contents.text = data[i].caseName
         flex.contents.hero.url = data[i].representImage
+        // flex.contents.body.contents[0].action.text = `${data[i].caseName} 活動介紹`
+        // flex.contents.body.contents[1].action.text = `${data[i].caseName} 活動特點`
         if (data[i].caseName === event.message.text) {
           a = 1
           // replies.push(`活動介紹:\n${data[i].registerReason}\n活動特點:\n${data[i].ceremonyFeature}`)
@@ -21,6 +23,10 @@ export default async (event) => {
           replies.push(`特有名俗:\n${data[i].caseName}`)
         } else if ((`${data[i].caseName}地址`) === event.message.text) {
           replies.push(`地址:\n${data[i].hostContactorAddress}`)
+        } else if ((`${data[i].caseName}活動特點`) === event.message.text) {
+          replies.push(`活動特點:\n${data[i].ceremonyFeature}`)
+        } else if ((`${data[i].caseName}活動介紹`) === event.message.text) {
+          replies.push(`活動介紹:\n${data[i].registerReason}}`)
         }
       }
       for (let j = 0; j < data2.length; j++) {
