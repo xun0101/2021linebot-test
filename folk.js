@@ -5,16 +5,16 @@ import flex from './flex.js'
 export default async (event) => {
   try {
     if (event.message.type === 'text') {
+      const newflex = JSON.parse(JSON.stringify(flex))
       const replies = []
       let a = 0
       for (let i = 0; i < data.length; i++) {
-        flex.contents.header.contents.text = data[i].caseName
-        flex.contents.hero.url = data[i].representImage
-        // flex.contents.body.contents[0].action.text = `${data[i].caseName} 活動介紹`
-        // flex.contents.body.contents[1].action.text = `${data[i].caseName} 活動特點`
+        newflex.contents.header.contents.text = data[i].caseName
+        newflex.contents.hero.url = data[i].representImage
+        newflex.contents.body.contents[0].action.text = (`${data[i].caseName}活動介紹`)
+        newflex.contents.body.contents[1].action.text = (`${data[i].caseName}活動特點`)
         if (data[i].caseName === event.message.text) {
           a = 1
-          // replies.push(`活動介紹:\n${data[i].registerReason}\n活動特點:\n${data[i].ceremonyFeature}`)
         } else if ((`${data[i].caseName}歷史`) === event.message.text) {
           replies.push(`名俗由來:\n${data[i].historyDevelopment}`)
         } else if ((`${data[i].caseName}特點`) === event.message.text) {
@@ -44,7 +44,7 @@ export default async (event) => {
         event.reply(replies.slice(0, 5))
         console.log(replies)
       } else if (a === 1) {
-        event.reply(flex)
+        event.reply(newflex)
       } else {
         event.reply('無此資料')
       }
