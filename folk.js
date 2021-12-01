@@ -5,7 +5,7 @@ import flex from './flex.js'
 export default async (event) => {
   try {
     if (event.message.type === 'text') {
-      const newflex = JSON.parse(JSON.stringify(flex))
+      var newflex = JSON.parse(JSON.stringify(flex))
       const replies = []
       let a = 0
       for (let i = 0; i < data.length; i++) {
