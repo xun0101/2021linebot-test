@@ -28,7 +28,7 @@ export default async (event) => {
       for (let j = 0; j < data2.length; j++) {
         if (data2[j].actName === event.message.text) {
           newflex.contents.header.contents.text = data2[j].actName
-          newflex.contents.hero.url = data2[j].representImage
+          newflex.contents.hero.url = data2[j].imageUrl
           newflex.contents.body.contents[0].action.text = (`${data2[j].actName}詳情`)
           newflex.contents.body.contents[1].action.text = (`${data2[j].actName}地址`)
           a = 1
@@ -43,6 +43,7 @@ export default async (event) => {
         console.log(replies)
       } else if (a === 1) {
         event.reply(newflex)
+        console.log(newflex)
       } else {
         event.reply('無此資料')
       }
