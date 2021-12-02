@@ -5,26 +5,26 @@ import flex from './flex.js'
 export default async (event) => {
   try {
     if (event.message.type === 'text') {
-      var newflex = JSON.parse(JSON.stringify(flex))
+      let newflex = JSON.parse(JSON.stringify(flex))
+      console.log(flex)
+      console.log(newflex)
       const replies = []
       let a = 0
       for (let i = 0; i < data.length; i++) {
-        newflex.contents.header.contents.text = data[i].caseName
-        newflex.contents.hero.url = data[i].representImage
-        newflex.contents.body.contents[0].action.text = (`${data[i].caseName}活動介紹`)
-        newflex.contents.body.contents[1].action.text = (`${data[i].caseName}活動特點`)
         if (data[i].caseName === event.message.text) {
+          newflex.contents.header.contents.text = data[i].caseName
+          newflex.contents.hero.url = data[i].representImage
+          newflex.contents.body.contents[0].action.text = (`${data[i].caseName}活動介紹`)
+          newflex.contents.body.contents[1].action.text = (`${data[i].caseName}特點`)
           a = 1
         } else if ((`${data[i].caseName}歷史`) === event.message.text) {
           replies.push(`名俗由來:\n${data[i].historyDevelopment}`)
-        } else if ((`${data[i].caseName}特點`) === event.message.text) {
-          replies.push(`名俗特點:\n${data[i].judgeCriteria.join('\n')}`)
-        } else if ((data[i].govInstitutionName || data[i].belongCity) === event.message.text) {
-          replies.push(`特有名俗:\n${data[i].caseName}`)
+        // } else if ((data[i].govInstitutionName || data[i].belongCity) === event.message.text) {
+        //   replies.push(`特有名俗:\n${data[i].caseName}`)
         } else if ((`${data[i].caseName}地址`) === event.message.text) {
           replies.push(`地址:\n${data[i].hostContactorAddress}`)
-        } else if ((`${data[i].caseName}活動特點`) === event.message.text) {
-          replies.push(`活動特點:\n${data[i].ceremonyFeature}`)
+        } else if ((`${data[i].caseName}特點`) === event.message.text) {
+          replies.push(`活動特點:\n${data[i].ceremonyFeature}\n名俗特點:\n${data[i].judgeCriteria.join('\n')}`)
         } else if ((`${data[i].caseName}活動介紹`) === event.message.text) {
           replies.push(`活動介紹:\n${data[i].registerReason}}`)
         }
