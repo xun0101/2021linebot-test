@@ -10,7 +10,7 @@ const bot = linebot({
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 })
 
-bot.on('message', async (event) => {
+bot.on('message', (event) => {
   console.log(event.message.text)
   if (event.message.type === 'text') {
     folk(event)
