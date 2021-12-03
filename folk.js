@@ -19,11 +19,9 @@ export default async (event) => {
           replies.push(`地址:\n${data[i].hostContactorAddress}`)
         } else if ((`${data[i].caseName}特點`) === event.message.text) {
           replies.push(`活動特點:\n${data[i].ceremonyFeature}\n名俗特點:\n${data[i].judgeCriteria.join('\n')}`)
-        }// } else if ((data[i].govInstitutionName || data[i].belongCity) === event.message.text) {
-        //   replies.push(`特有名俗:\n${data[i].caseName}`)
-        // else if ((`${data[i].caseName}活動介紹`) === event.message.text) {
-        //   replies.push(`活動介紹:\n${data[i].registerReason}}`)
-        // }
+        } else if (data[i].belongCity === event.message.text) {
+          replies.push(`特有名俗:\n${data[i].caseName}\n活動介紹:\n${data[i].registerReason}}`)
+        }
       }
       for (let j = 0; j < data2.length; j++) {
         if (data2[j].actName === event.message.text) {
@@ -32,6 +30,7 @@ export default async (event) => {
           newflex.contents.body.contents[0].action.text = (`${data2[j].actName}詳情`)
           newflex.contents.body.contents[1].action.text = (`${data2[j].actName}地址`)
           a = 1
+          console.log('123')
         } else if ((`${data2[j].actName}詳情`) === event.message.text) {
           replies.push(`活動現況:\n${data2[j].cycle}\n活動說明:\n${data2[j].description}\n活動網址:\n${data2[j].website}`)
         } else if ((`${data2[j].actName}地址`) === event.message.text) {

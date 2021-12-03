@@ -30,7 +30,7 @@ export default {
           type: 'button',
           action: {
             type: 'message',
-            label: '活動特點',
+            label: '活動介紹',
             text: 'hi'
           },
           style: 'primary',
@@ -41,7 +41,7 @@ export default {
           type: 'button',
           action: {
             type: 'message',
-            label: '活動地址',
+            label: '地址',
             text: 'hi'
           },
           style: 'primary',
