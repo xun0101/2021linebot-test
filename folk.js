@@ -15,6 +15,7 @@ export default async (event) => {
           newflex.contents.body.contents[0].action.text = (`${data[i].caseName}特點`)
           newflex.contents.body.contents[1].action.text = (`${data[i].caseName}地址`)
           a = 1
+          break
         } else if ((`${data[i].caseName}地址`) === event.message.text) {
           replies.push(`地址:\n${data[i].hostContactorAddress}`)
         } else if ((`${data[i].caseName}特點`) === event.message.text) {
@@ -26,15 +27,17 @@ export default async (event) => {
       for (let j = 0; j < data2.length; j++) {
         if (data2[j].actName === event.message.text) {
           newflex.contents.header.contents.text = data2[j].actName
-          newflex.contents.hero.url = data2[j].imageUrl
+          newflex.contents.hero.url = 'https://cloud.culture.tw/' + data2[j].imageUrl
           newflex.contents.body.contents[0].action.text = (`${data2[j].actName}詳情`)
           newflex.contents.body.contents[1].action.text = (`${data2[j].actName}地址`)
           a = 1
-          console.log('123')
+          break
         } else if ((`${data2[j].actName}詳情`) === event.message.text) {
           replies.push(`活動現況:\n${data2[j].cycle}\n活動說明:\n${data2[j].description}\n活動網址:\n${data2[j].website}`)
         } else if ((`${data2[j].actName}地址`) === event.message.text) {
           replies.push(`活動地址:\n${data2[j].address}`)
+        } else if ((data2[j].cityName) === event.message.text) {
+          replies.push(`活動:\n${data2[j].actName}\n活動時間:\n${data2[j].startTime}\n${data2[j].endTime}`)
         }
       }
       if (replies.length > 0) {

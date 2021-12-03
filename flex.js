@@ -41,7 +41,7 @@ export default {
           type: 'button',
           action: {
             type: 'message',
-            label: '地址',
+            label: '活動地址',
             text: 'hi'
           },
           style: 'primary',
