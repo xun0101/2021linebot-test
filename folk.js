@@ -1,13 +1,17 @@
 import { data } from './data.js'
 import { data as data2 } from './data2.js'
 import flex from './flex.js'
+import flex2 from './flex2.js'
 
 export default async (event) => {
   try {
     if (event.message.type === 'text') {
       const newflex = JSON.parse(JSON.stringify(flex))
+      const newflex2 = JSON.parse(JSON.stringify(flex2))
       const replies = []
+      const numbers = []
       let a = 0
+      let b = 0
 
       for (let i = 0; i < data.length; i++) {
         if (data[i].caseName === event.message.text) {
@@ -43,6 +47,22 @@ export default async (event) => {
         } else if ((data2[j].cityName) === event.message.text) {
           replies.push(`活動:\n${data2[j].actName}\n活動時間:\n${data2[j].startTime}\n${data2[j].endTime}`)
         }
+
+        if (event.message.text === '推薦') {
+          b = 1
+          const rand = (min, max) => {
+            return Math.round(Math.random() * (max - min)) + min
+          }
+          while (numbers.length < 3) {
+            newflex2.contents.hero.url = numbers[0].item
+            newflex2.contents.body.contents.text = numbers[1].item
+            newflex2.contents.body.contents.action.uri = numbers[2].item
+            const num = rand(1, data2.length)
+            if (!numbers.includes(num)) {
+              numbers.push(data2[num].imageUrl + data2[num].actName + data2[num].website)
+            }
+          }
+        }
       }
 
       if (replies.length > 0) {
@@ -51,6 +71,8 @@ export default async (event) => {
       } else if (a === 1) {
         event.reply(newflex)
         console.log(newflex)
+      } else if (b === 1) {
+        event.reply(newflex2)
       } else {
         event.reply('無此資料')
       }
