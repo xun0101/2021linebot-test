@@ -65,18 +65,18 @@ export default async (event) => {
                 act: data2[num].actName,
                 web: data2[num].website
               }])
-              newflex2.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[0].img
-              newflex2.contents[0].body.contents.text = numbers[0].act
-              newflex2.contents[0].body.contents.action.uri = numbers[0].web
-              newflex2.contents[1].hero.url = 'https://cloud.culture.tw/' + numbers[1].img
-              newflex2.contents[1].body.contents.text = numbers[1].act
-              newflex2.contents[1].body.contents.action.uri = numbers[1].web
-              newflex2.contents[2].hero.url = 'https://cloud.culture.tw/' + numbers[2].img
-              newflex2.contents[2].body.contents.text = numbers[2].act
-              newflex2.contents[2].body.contents.action.uri = numbers[2].web
-              console.log(newflex2)
-              console.log(numbers)
             }
+            newflex2.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[0].img
+            newflex2.contents[0].body.contents.text = numbers[0].act
+            newflex2.contents[0].body.contents.action.uri = numbers[0].web
+            newflex2.contents[1].hero.url = 'https://cloud.culture.tw/' + numbers[1].img
+            newflex2.contents[1].body.contents.text = numbers[1].act
+            newflex2.contents[1].body.contents.action.uri = numbers[1].web
+            newflex2.contents[2].hero.url = 'https://cloud.culture.tw/' + numbers[2].img
+            newflex2.contents[2].body.contents.text = numbers[2].act
+            newflex2.contents[2].body.contents.action.uri = numbers[2].web
+            console.log(newflex2)
+            console.log(numbers)
           }
         }
       }
@@ -86,7 +86,6 @@ export default async (event) => {
         console.log(replies)
       } else if (a === 1) {
         event.reply(newflex)
-        console.log(123)
       } else if (b === 1) {
         event.reply(newflex2)
         console.log(newflex2)
