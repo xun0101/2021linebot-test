@@ -75,7 +75,7 @@ export default async (event) => {
         console.log(replies)
       } else if (a === 1) {
         event.reply(newflex)
-        console.log(newflex)
+        console.log(123)
       } else if (b === 1) {
         event.reply(newflex2)
       } else {
