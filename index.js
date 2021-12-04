@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import linebot from 'linebot'
 import folk from './folk.js'
+import flex from './flex3.js'
 import './data2.js'
 import './data.js'
 
@@ -13,7 +14,11 @@ const bot = linebot({
 bot.on('message', (event) => {
   console.log(event.message.text)
   if (event.message.type === 'text') {
-    folk(event)
+    if (event.message.text === '了解更多') {
+      event.replay(flex)
+    } else {
+      folk(event)
+    }
   } else {
     console.log('error')
   }
