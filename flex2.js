@@ -13,7 +13,8 @@ export default {
         },
         hero: {
           type: 'image',
-          url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png'
+          // imageUrl  1204
+          url: 'imageUrl'
         },
         body: {
           type: 'box',

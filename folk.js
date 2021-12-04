@@ -57,8 +57,10 @@ export default async (event) => {
             newflex2.contents.hero.url = numbers[0].item
             newflex2.contents.body.contents.text = numbers[1].item
             newflex2.contents.body.contents.action.uri = numbers[2].item
+            console.log(newflex2)
             const num = rand(1, data2.length)
             if (!numbers.includes(num)) {
+              // 1204
               numbers.push(data2[num].imageUrl + data2[num].actName + data2[num].website)
             }
           }
