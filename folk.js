@@ -7,6 +7,7 @@ export default async (event) => {
   try {
     console.log(123)
     if (event.message.type === 'text') {
+      console.log(123)
       const newflex = JSON.parse(JSON.stringify(flex))
       const newflex2 = JSON.parse(JSON.stringify(flex2))
       const replies = []
