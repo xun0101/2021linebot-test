@@ -5,7 +5,6 @@ import flex2 from './flex2.js'
 
 export default async (event) => {
   try {
-    console.log(123)
     if (event.message.type === 'text') {
       console.log(123)
       const newflex = JSON.parse(JSON.stringify(flex))
@@ -57,14 +56,24 @@ export default async (event) => {
           }
           console.log(123)
           while (numbers.length < 3) {
-            // newflex2.contents.hero.url = numbers[0].item
-            // newflex2.contents.body.contents.text = numbers[1].item
-            // newflex2.contents.body.contents.action.uri = numbers[2].item
             console.log(123)
             const num = rand(1, data2.length)
             if (!numbers.includes(num)) {
               // 1204
-              // numbers.push(data2[num].imageUrl + data2[num].actName + data2[num].website)
+              numbers.push([{
+                img:data2[num].imageUrl,
+                act:data2[num].actName,
+                web:data2[num].website
+              }])
+              newflex2.contents[0].hero.url = numbers[0].img
+              newflex2.contents[0].body.contents.text = numbers[0].act
+              newflex2.contents[0].body.contents.action.uri = numbers[0].web
+              newflex2.contents[1].hero.url = numbers[1].img
+              newflex2.contents[1].body.contents.text = numbers[1].act
+              newflex2.contents[1].body.contents.action.uri = numbers[1].web
+              newflex2.contents[2].hero.url = numbers[2].img
+              newflex2.contents[2].body.contents.text = numbers[2].act
+              newflex2.contents[2].body.contents.action.uri = numbers[2].web
             }
           }
         }
