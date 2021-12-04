@@ -53,15 +53,16 @@ export default async (event) => {
           const rand = (min, max) => {
             return Math.round(Math.random() * (max - min)) + min
           }
+          console.log(123)
           while (numbers.length < 3) {
-            newflex2.contents.hero.url = numbers[0].item
-            newflex2.contents.body.contents.text = numbers[1].item
-            newflex2.contents.body.contents.action.uri = numbers[2].item
-            console.log(newflex2)
+            // newflex2.contents.hero.url = numbers[0].item
+            // newflex2.contents.body.contents.text = numbers[1].item
+            // newflex2.contents.body.contents.action.uri = numbers[2].item
+            console.log(123)
             const num = rand(1, data2.length)
             if (!numbers.includes(num)) {
               // 1204
-              numbers.push(data2[num].imageUrl + data2[num].actName + data2[num].website)
+              // numbers.push(data2[num].imageUrl + data2[num].actName + data2[num].website)
             }
           }
         }
