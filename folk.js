@@ -5,6 +5,7 @@ import flex2 from './flex2.js'
 
 export default async (event) => {
   try {
+    console.log(123)
     if (event.message.type === 'text') {
       const newflex = JSON.parse(JSON.stringify(flex))
       const newflex2 = JSON.parse(JSON.stringify(flex2))
