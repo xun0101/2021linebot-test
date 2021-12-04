@@ -74,6 +74,8 @@ export default async (event) => {
               newflex2.contents[2].hero.url = numbers[2].img
               newflex2.contents[2].body.contents.text = numbers[2].act
               newflex2.contents[2].body.contents.action.uri = numbers[2].web
+              console.log(newflex2)
+              console.log(numbers)
             }
           }
         }
@@ -87,6 +89,7 @@ export default async (event) => {
         console.log(123)
       } else if (b === 1) {
         event.reply(newflex2)
+        console.log(newflex2)
       } else {
         event.reply('無此資料')
       }
