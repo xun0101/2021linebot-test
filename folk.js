@@ -61,9 +61,9 @@ export default async (event) => {
             if (!numbers.includes(num)) {
               // 1204
               numbers.push([{
-                img:data2[num].imageUrl,
-                act:data2[num].actName,
-                web:data2[num].website
+                img: data2[num].imageUrl,
+                act: data2[num].actName,
+                web: data2[num].website
               }])
               newflex2.contents[0].hero.url = numbers[0].img
               newflex2.contents[0].body.contents.text = numbers[0].act
