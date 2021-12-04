@@ -15,7 +15,7 @@ bot.on('message', (event) => {
   console.log(event.message.text)
   if (event.message.type === 'text') {
     if (event.message.text === '了解更多') {
-      event.replay(flex)
+      flex(event)
     } else {
       folk(event)
     }
