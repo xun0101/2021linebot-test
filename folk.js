@@ -60,11 +60,12 @@ export default async (event) => {
             const num = rand(1, data2.length)
             if (!numbers.includes(num)) {
               // 1204
-              numbers.push([{
+              console.log(data2[num].imageUrl)
+              numbers.push({
                 img: data2[num].imageUrl,
                 act: data2[num].actName,
                 web: data2[num].website
-              }])
+              })
               console.log(numbers)
             }
             // newflex2.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[0].img
