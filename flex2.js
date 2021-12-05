@@ -54,14 +54,14 @@ export default {
           contents: [
             {
               type: 'text',
-              text: 'hello, world'
+              text: 'hello, world',
+              action: {
+                type: 'uri',
+                label: 'action',
+                uri: 'http://linecorp.com/'
+              }
             }
-          ],
-          action: {
-            type: 'uri',
-            label: 'action',
-            uri: 'http://linecorp.com/'
-          }
+          ]
         },
         styles: {
           header: {
