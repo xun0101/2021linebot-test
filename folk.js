@@ -86,7 +86,7 @@ export default async (event) => {
         event.reply(newflex)
       } else if (b === 1) {
         event.reply(newflex2)
-        console.log(newflex2)
+        console.log('newflex2' + newflex2)
       } else {
         event.reply('無此資料')
       }
