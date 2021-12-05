@@ -72,14 +72,14 @@ export default async (event) => {
             // console.log(numbers)
           }
           newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[0].img
-        //   newflex2.contents[0].body.contents.text = numbers[0].act
-        // newflex2.contents[0].body.contents.action.uri = numbers[0].web
-        //     newflex2.contents[1].hero.url = 'https://cloud.culture.tw/' + numbers[1].img
-        //     newflex2.contents[1].body.contents.text = numbers[1].act
-        //     newflex2.contents[1].body.contents.action.uri = numbers[1].web
-        //     newflex2.contents[2].hero.url = 'https://cloud.culture.tw/' + numbers[2].img
-        //     newflex2.contents[2].body.contents.text = numbers[2].act
-        //     newflex2.contents[2].body.contents.action.uri = numbers[2].web
+          newflex2.contents.contents[0].body.contents.text = numbers[0].act
+          newflex2.contents.contents[0].body.contents.action.uri = numbers[0].web
+          newflex2.contents.contents[1].hero.url = 'https://cloud.culture.tw/' + numbers[1].img
+          newflex2.contents.contents[1].body.contents.text = numbers[1].act
+          newflex2.contents.contents[1].body.contents.action.uri = numbers[1].web
+          newflex2.contents.contents[2].hero.url = 'https://cloud.culture.tw/' + numbers[2].img
+          newflex2.contents.contents[2].body.contents.text = numbers[2].act
+          newflex2.contents.contents[2].body.contents.action.uri = numbers[2].web
         }
       }
 
