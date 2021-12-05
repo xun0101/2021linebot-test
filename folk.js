@@ -66,9 +66,9 @@ export default async (event) => {
                 web: data2[num].website
               })
               console.log(numbers.web)
+              console.log(numbers)
             }
-            // console.log(newflex2)
-            // console.log(numbers)
+            console.log(newflex2)
           }
           newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[0].img
           newflex2.contents.contents[0].body.contents.text = numbers[0].act
