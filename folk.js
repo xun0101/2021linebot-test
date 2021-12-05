@@ -60,13 +60,12 @@ export default async (event) => {
             const num = rand(1, data2.length)
             if (!numbers.includes(data2[num])) {
               // 1204
-              console.log(data2[num].imageUrl)
               numbers.push({
                 img: data2[num].imageUrl,
                 act: data2[num].actName,
                 web: data2[num].website
               })
-              console.log(numbers)
+              console.log(numbers.web)
             }
             // console.log(newflex2)
             // console.log(numbers)
