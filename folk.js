@@ -54,9 +54,9 @@ export default async (event) => {
           const rand = (min, max) => {
             return Math.round(Math.random() * (max - min)) + min
           }
-          console.log(123)
+          console.log(456)
           while (numbers.length < 3) {
-            console.log(123)
+            console.log(789)
             const num = rand(1, data2.length)
             if (!numbers.includes(num)) {
               // 1204
