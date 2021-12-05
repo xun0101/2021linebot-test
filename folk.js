@@ -65,7 +65,7 @@ export default async (event) => {
                 act: data2[num].actName,
                 web: data2[num].website
               })
-              console.log(numbers.web)
+              console.log(numbers[0].web)
               console.log(numbers)
             }
             console.log(newflex2)
