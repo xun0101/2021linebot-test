@@ -54,12 +54,9 @@ export default async (event) => {
           const rand = (min, max) => {
             return Math.round(Math.random() * (max - min)) + min
           }
-          console.log(456)
           while (numbers.length < 3) {
-            console.log(789)
             const num = rand(1, data2.length)
             if (!numbers.includes(data2[num])) {
-              // 1204
               numbers.push({
                 img: data2[num].imageUrl,
                 act: data2[num].actName,
@@ -67,6 +64,12 @@ export default async (event) => {
               })
             }
           }
+          // for (let k = 0; k < numbers.length; k++) {
+          //   newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[k].img
+          //   newflex2.contents.contents[0].body.contents[0].text = numbers[k].act
+          //   newflex2.contents.contents[0].body.contents[0].action.uri = numbers[k].web
+          //   console.log(k)
+          // }
           newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[0].img
           newflex2.contents.contents[0].body.contents[0].text = numbers[0].act
           newflex2.contents.contents[0].body.contents[0].action.uri = numbers[0].web

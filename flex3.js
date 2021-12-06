@@ -10,12 +10,18 @@ export default {
         {
           type: 'text',
           text: '教程',
-          margin: 'none',
           size: 'lg',
-          weight: 'bold',
-          style: 'italic'
+          style: 'italic',
+          align: 'center',
+          weight: 'bold'
         }
-      ]
+      ],
+      backgroundColor: '#B9B973'
+    },
+    hero: {
+      type: 'image',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/ROC_Ministry_of_Culture_Seal.svg/1050px-ROC_Ministry_of_Culture_Seal.svg.png',
+      size: 'full'
     },
     body: {
       type: 'box',
@@ -23,20 +29,47 @@ export default {
       contents: [
         {
           type: 'text',
-          text: '👉不知道有什麼活動的時候，先搜尋地名，可以找到當地的活動',
-          contents: [],
-          offsetBottom: 'lg'
+          text: 'hello, world',
+          contents: [
+            {
+              type: 'span',
+              text: '👉不知道有什麼活動'
+            },
+            {
+              type: 'span',
+              text: '：先搜尋地名'
+            }
+          ]
         },
         {
           type: 'text',
-          text: '👉希望知道活動的詳情，可以打活動名稱，能夠知道活動的時間、地點、特色等等'
+          text: 'hello, world',
+          contents: [
+            {
+              type: 'span',
+              text: '👉想知道活動的詳情'
+            },
+            {
+              type: 'span',
+              text: '：打活動名稱'
+            }
+          ]
+        },
+        {
+          type: 'text',
+          text: 'hello, world',
+          contents: [
+            {
+              type: 'span',
+              text: '👉有選擇困難症'
+            },
+            {
+              type: 'span',
+              text: '：按下推薦吧！'
+            }
+          ]
         }
       ]
-    },
-    styles: {
-      header: {
-        backgroundColor: '#B9B973'
-      }
     }
   }
 }

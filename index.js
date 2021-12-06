@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import linebot from 'linebot'
 import folk from './folk.js'
-import flex from './flex3.js'
+import teach from './teach.js'
 import './data2.js'
 import './data.js'
 
@@ -15,7 +15,7 @@ bot.on('message', (event) => {
   console.log(event.message.text)
   if (event.message.type === 'text') {
     if (event.message.text === '了解更多') {
-      flex(event)
+      teach(event)
     } else {
       folk(event)
     }
