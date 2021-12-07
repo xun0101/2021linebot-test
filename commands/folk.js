@@ -1,7 +1,7 @@
-import { data } from './data.js'
-import { data as data2 } from './data2.js'
-import flex from './flex.js'
-import flex2 from './flex2.js'
+import { data } from '../data/data.js'
+import { data as data2 } from '../data/data2.js'
+import flex from '../flex/flex.js'
+import flex2 from '../flex/flex2.js'
 
 export default async (event) => {
   try {
@@ -64,12 +64,6 @@ export default async (event) => {
               })
             }
           }
-          // for (let k = 0; k < numbers.length; k++) {
-          //   newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[k].img
-          //   newflex2.contents.contents[0].body.contents[0].text = numbers[k].act
-          //   newflex2.contents.contents[0].body.contents[0].action.uri = numbers[k].web
-          //   console.log(k)
-          // }
           newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[0].img
           newflex2.contents.contents[0].body.contents[0].text = numbers[0].act
           newflex2.contents.contents[0].body.contents[0].action.uri = numbers[0].web
@@ -81,6 +75,16 @@ export default async (event) => {
           newflex2.contents.contents[2].body.contents[0].action.uri = numbers[2].web
           console.log('newflex2' + newflex2)
           console.log(numbers)
+
+          for (let k = 0; k < numbers.length; k++) {
+            if (numbers[k].web === '') {
+              newflex2.contents.contents[k].body.contents[0].action.uri = 'https://opendata.culture.tw/'
+            }
+            // newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[k].img
+            // newflex2.contents.contents[0].body.contents[0].text = numbers[k].act
+            // newflex2.contents.contents[0].body.contents[0].action.uri = numbers[k].web
+            console.log(k)
+          }
         }
       }
 

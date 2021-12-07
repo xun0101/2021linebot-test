@@ -1,9 +1,9 @@
 import 'dotenv/config'
 import linebot from 'linebot'
-import folk from './folk.js'
-import teach from './teach.js'
-import './data2.js'
-import './data.js'
+import folk from './commands/folk.js'
+import teach from './commands/teach.js'
+import './data/data2.js'
+import './data/data.js'
 
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,

@@ -1,4 +1,4 @@
-import flex from './flex3.js'
+import flex from '../flex/flex3.js'
 export default async (event) => {
   try {
     if (event.message.text === '了解更多') {
