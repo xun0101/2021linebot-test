@@ -80,9 +80,6 @@ export default async (event) => {
             if (numbers[k].web === '') {
               newflex2.contents.contents[k].body.contents[0].action.uri = 'https://opendata.culture.tw/'
             }
-            // newflex2.contents.contents[0].hero.url = 'https://cloud.culture.tw/' + numbers[k].img
-            // newflex2.contents.contents[0].body.contents[0].text = numbers[k].act
-            // newflex2.contents.contents[0].body.contents[0].action.uri = numbers[k].web
             console.log(k)
           }
         }
