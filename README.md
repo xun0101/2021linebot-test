@@ -30,3 +30,10 @@
 
 ![地名.](/image/305070.jpg)
 
+## API使用來源
+
+此資料由文化資料開放平台
+[藝文活動-節慶專區](https://opendata.culture.tw/frontsite/openData/detail?datasetId=413)
+[文資局民俗](https://opendata.culture.tw/frontsite/openData/detail?datasetId=726)
+提供。
+
